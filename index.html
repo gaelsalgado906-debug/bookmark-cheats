@@ -1,0 +1,338 @@
+<html lang="en" data-theme="dark"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="https://res.cloudinary.com/dkqqcqf6f/image/upload/v1731388818/PXI_Fusion_hoggof.png">
+<title>gael cheats Extension Install</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+:root {
+--bg-color: #0c0c10;
+--text-color: #e0e0e0;
+--card-bg: rgba(20, 20, 25, 0.4);
+--card-border: rgba(255, 255, 255, 0.08);
+--subtitle-color: #a0a0a0;
+--accent-color: #3a8eff;
+--accent-hover: #2d70cc;
+--glass-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+--card-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+--gradient-start: #101014;
+--gradient-end: #1f1f25;
+}
+[data-theme="white-abstract"] {
+--bg-color: #f7f7fa;
+--text-color: #23232b;
+--card-bg: rgba(255,255,255,0.85);
+--card-border: rgba(30, 30, 40, 0.08);
+--subtitle-color: #6a6a7a;
+--accent-color: #3a8eff;
+--accent-hover: #2d70cc;
+--glass-shadow: 0 12px 40px rgba(180, 200, 255, 0.18);
+--card-shadow: 0 6px 20px rgba(180, 200, 255, 0.10);
+--gradient-start: #f7f7fa;
+--gradient-end: #e9e9f3;
+}
+body {
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+color: var(--text-color);
+margin: 0;
+padding: 0;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+transition: all 0.5s ease;
+}
+.container {
+background: var(--card-bg);
+border: 1px solid var(--card-border);
+border-radius: 25px;
+box-shadow: var(--glass-shadow);
+padding: 64px 38px 64px 38px;
+margin-top: 120px;
+margin-bottom: 120px;
+max-width: 520px;
+width: 98vw;
+text-align: center;
+position: relative;
+}
+.container h1 {
+font-size: 2.3em;
+margin-bottom: 22px;
+color: var(--text-color);
+font-weight: 800;
+background: linear-gradient(135deg, var(--text-color) 0%, var(--accent-color) 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-size: 200% 200%;
+animation: gradient-shift 8s ease infinite;
+}
+@keyframes gradient-shift {
+0% { background-position: 0% 50%; }
+50% { background-position: 100% 50%; }
+100% { background-position: 0% 50%; }
+}
+.instructions {
+color: var(--subtitle-color);
+font-size: 1.13em;
+margin-bottom: 36px;
+}
+.bookmarklet {
+display: inline-block;
+background: var(--accent-color);
+color: #fff;
+padding: 15px 32px;
+border-radius: 14px;
+font-size: 1.15em;
+font-weight: 700;
+text-decoration: none;
+box-shadow: 0 2px 12px #3a8eff40;
+margin-bottom: 18px;
+cursor: grab;
+user-select: none;
+transition: background 0.2s, box-shadow 0.2s;
+position: relative;
+z-index: 2;
+}
+.bookmarklet:active {
+cursor: grabbing;
+}
+.bookmarklet:hover {
+background: var(--accent-hover);
+box-shadow: 0 4px 18px #3a8eff80;
+}
+.drag-tip {
+color: var(--subtitle-color);
+font-size: 1.05em;
+margin-bottom: 22px;
+}
+.footer {
+width: 100%;
+background: var(--card-bg);
+border-top: 1px solid var(--card-border);
+padding: 28px;
+text-align: center;
+margin-top: 60px;
+color: var(--subtitle-color);
+font-size: 1em;
+box-shadow: var(--glass-shadow);
+}
+.back-button-top {
+position: absolute;
+top: 18px;
+left: 18px;
+background: var(--card-bg);
+border: 1px solid var(--card-border);
+border-radius: 50%;
+padding: 8px 12px;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+box-shadow: var(--glass-shadow);
+transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+color: var(--text-color);
+font-size: 1.2em;
+z-index: 10;
+}
+.back-button-top:hover {
+background: var(--accent-hover);
+color: #fff;
+}
+@media (max-width: 480px) {
+.container {
+padding: 18px 4vw 18px 4vw;
+}
+.container h1 {
+font-size: 1.3em;
+}
+}
+
+/* Ad Blocker Popup Styles */
+.adblock-popup {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.8);
+display: none;
+justify-content: center;
+align-items: center;
+z-index: 10000;
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
+}
+
+.adblock-popup-content {
+background: var(--card-bg);
+backdrop-filter: blur(15px) saturate(180%);
+-webkit-backdrop-filter: blur(15px) saturate(180%);
+border: 1px solid var(--card-border);
+border-radius: 25px;
+box-shadow: var(--glass-shadow);
+padding: 40px;
+max-width: 500px;
+width: 90%;
+text-align: center;
+transform-style: preserve-3d;
+animation: popupSlideIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes popupSlideIn {
+from {
+opacity: 0;
+transform: translateY(-50px) scale(0.9);
+}
+to {
+opacity: 1;
+transform: translateY(0) scale(1);
+}
+}
+
+.adblock-popup h2 {
+color: #f44336;
+font-size: 2em;
+margin-bottom: 20px;
+text-shadow: 0 0 15px rgba(244, 67, 54, 0.3);
+}
+
+.adblock-popup p {
+color: var(--text-color);
+font-size: 1.1em;
+line-height: 1.6;
+margin-bottom: 30px;
+}
+
+.adblock-popup-btn {
+background: #f44336;
+color: white;
+border: none;
+border-radius: 15px;
+padding: 15px 30px;
+font-size: 1.1em;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.3s ease;
+text-transform: uppercase;
+letter-spacing: 1px;
+}
+
+.adblock-popup-btn:hover {
+background: #d32f2f;
+transform: translateY(-2px);
+box-shadow: 0 5px 15px rgba(244, 67, 54, 0.4);
+}
+
+.adblock-popup-icon {
+font-size: 4em;
+color: #f44336;
+margin-bottom: 20px;
+animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+0% {
+transform: scale(1);
+}
+50% {
+transform: scale(1.1);
+}
+100% {
+transform: scale(1);
+}
+}
+</style>
+<meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9nrunKdU5m96PSN1XsSGr3qOP0lvPFUB2AiAylCDlN5DTl17uDFkpQuHj1AFtgWLxpLaiBZuhrtb2WOu7ofHwEAAACKeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A93bovR+QVXNx2/38qDbmeYYf1wdte9EO37K9eMq3r+541qo0byhYU899BhPB7Cv9QqD7wIbR1B6OAc9kEfYCA4AAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A1S5fojrAunSDrFbD8OfGmFHdRFZymSM/1ss3G+NEttCLfHkXvlcF6LGLH8Mo5PakLO1sCASXU1/gQf6XGuTBgwAAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"></head>
+<body>
+<div class="container">
+<button class="back-button-top" onclick="window.location.href='index.html'">
+<i class="fas fa-arrow-left"></i>
+</button>
+<h1>Make sure you have the gael cheats in  Chrome Extension installed</h1>
+<div class="instructions">
+<p>To use gaek cheats on Prodigy, drag the button below to your bookmarks bar.</p>
+<div class="drag-tip">Then, when you're on Prodigy, click the bookmark to activate PXI Fusion.</div>
+</div>
+<a class="bookmarklet" href="javascript:(()=&gt;{window.addEventListener('message',async e=&gt;{if(e.data?.type==='pxi-fusion-launch'&amp;&amp;e.data.url){try{const r=await fetch(e.data.url);const t=await r.text();eval(t);}catch(err){console.error('PXI Fusion Loader Error:',err);}}});window.open('https://pxi-fusion.com/launcher','_blank');})();" draggable="true" title="Drag to bookmarks bar">
+gael cheats 
+</a>
+</div>
+<div class="footer">
+<p>© 2025 gael Fusion. All rights reserved.</p>
+</div>
+
+<!-- Ad Blocker Detection Popup -->
+<div id="adblock-popup" class="adblock-popup">
+<div class="adblock-popup-content">
+<div class="adblock-popup-icon">🚫</div>
+<h2>Ad Blocker Detected!</h2>
+<p>We've detected that you're using an ad blocker. To continue using this website, please disable your ad blocker and refresh the page.</p>
+<button class="adblock-popup-btn" onclick="refreshPage()">Refresh Page</button>
+</div>
+</div>
+<script>
+// Ad Blocker Detection
+function detectAdBlocker() {
+// Method 1: Check if ads are blocked by trying to load a known ad
+const testAd = document.createElement('div');
+testAd.innerHTML = '&nbsp;';
+testAd.className = 'adsbox';
+testAd.style.position = 'absolute';
+testAd.style.left = '-10000px';
+testAd.style.top = '-1000px';
+testAd.style.width = '1px';
+testAd.style.height = '1px';
+document.body.appendChild(testAd);
+
+// Check if the ad element is hidden
+const isAdBlocked = testAd.offsetHeight === 0 || testAd.offsetWidth === 0;
+document.body.removeChild(testAd);
+
+// Method 2: Check for common ad blocker patterns
+const adBlockerPatterns = [
+'adblock',
+'ad-block',
+'ublock',
+'ghostery',
+'privacy-badger'
+];
+
+const userAgent = navigator.userAgent.toLowerCase();
+const hasAdBlockerPattern = adBlockerPatterns.some(pattern => userAgent.includes(pattern));
+
+// Method 3: Try to load a fake ad script
+let scriptBlocked = false;
+const testScript = document.createElement('script');
+testScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+testScript.onerror = function() {
+scriptBlocked = true;
+};
+testScript.onload = function() {
+scriptBlocked = false;
+};
+document.head.appendChild(testScript);
+
+// Wait a bit then check
+setTimeout(() => {
+document.head.removeChild(testScript);
+
+// Show popup if ad blocker is detected
+if (isAdBlocked || hasAdBlockerPattern || scriptBlocked) {
+document.getElementById('adblock-popup').style.display = 'flex';
+}
+}, 1000);
+}
+
+function refreshPage() {
+location.reload();
+}
+
+// Run ad blocker detection when page loads
+document.addEventListener('DOMContentLoaded', () => {
+detectAdBlocker();
+});</script>
+
+
+</body></html>
